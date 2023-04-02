@@ -1,0 +1,46 @@
+<%- include('navbar.ejs') %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow-lg border-0 bg-light">
+                <div class="card-header">
+                    <%- include('includes/logo.ejs')%>
+                    <h3 class="text-center">Please Sign Up</h3>
+                    <div class="text-danger">
+                        <% if (msg !== '') { %><%= msg %><% } %>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="/register" method="post" id="registerForm" autocomplete="on">
+                        <div class="form-group">
+                            <span class="text-danger">*</span>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="email"
+                                   value="<% if (email !== '') { %><%= email %><% } %>" autocomplete="on" autofocus required>
+                            <p class="text-danger d-none emailErr"></p>
+                        </div><br>
+                        <div class="form-group">
+                            <span class="text-danger">*</span>
+                            <input type="text" name="firstName" class="form-control invalid" id="fname" placeholder="first Name"
+                                   value="<% if (firstName !== '') { %><%= firstName %><% } %>" autocomplete="on" required>
+                            <p class="text-danger d-none fnameErr"></p>
+                        </div><br>
+                        <div class="form-group">
+                            <span class="text-danger">*</span>
+                            <input type="text" name="lastName" class="form-control" id="lname" placeholder="last Name"
+                                   value="<% if (lastName !== '') { %><%= lastName %><% } %>" required autocomplete="on">
+                            <p class="text-danger d-none lnameErr"></p>
+                        </div><br>
+                        <br>
+                        <div class="col-md-12 text-center mb-3">
+                            <input type="submit" class="btn btn-primary rounded-pill" value="Next"/>
+                        </div>
+                    </form>
+                    <p style="background-color: rgba(0, 0, 0, 0.4); background-size: initial" class="text-center">Already
+                        have an account? <a href="/">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/registerValidation.js"></script>
+<%- include('includes/end.ejs') %>

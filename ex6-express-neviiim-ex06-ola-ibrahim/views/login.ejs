@@ -1,0 +1,32 @@
+<%- include('navbar.ejs') %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow-lg border-0 bg-light">
+            <div class="card-header">
+                <%- include('includes/logo.ejs')%>
+                    <h3 class="text-center">Please Sign In</h3>
+                    <p class="text-danger"><%= msg %></p>
+                </div>
+                <div class="card-body">
+                    <form action="/" method="post" name="login" autocomplete="on" method="POST">
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control rounded-3" placeholder="email" autofocus
+                                   required autocomplete="email">
+                        </div><br>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required
+                                   autocomplete="password">
+                        </div>
+                        <br>
+                        <div class="col-md-12 text-center mb-3">
+                            <input type="submit" class="btn btn-primary rounded-circle" value="Login"/>
+                        </div>
+                    </form>
+                    <p style="background-color: rgba(0, 0, 0, 0.4); background-size: initial" class="text-center">Don't have an account? <a href="/register">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('includes/end.ejs') %>

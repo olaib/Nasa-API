@@ -1,0 +1,14 @@
+<%- include('navbar.ejs') %>
+<div class="container border border-info bg-dark text-white">
+    <div class="row">
+        <div class="col-md-12 rounded-pill">
+            <h2><%= error.status %></h2>
+        </div>
+        <div class="col-md-12">
+            <h2><%= message %></h2>
+            <pre><%= error.stack %></pre>
+
+        </div>
+    </div>
+</div>
+<%- include('includes/end.ejs') %>

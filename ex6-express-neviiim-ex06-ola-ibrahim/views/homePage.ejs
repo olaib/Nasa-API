@@ -1,0 +1,45 @@
+<%- include('navbar.ejs') %>
+<div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body p-5 text-center">
+                    <div class="mb-md-5 mt-md-4 pb-5" id="nextPage">
+                        <%- include('includes/logo.ejs') %>
+                        <form id="ajaxDateFormGet" class="justify-start">
+                            <div class="form-group row mb-2">
+                                <label for="date" class="col-form-label col-sm-4">Select a date:</label>
+                                <div class="col-sm-8">
+                                    <input type="date" name="date" class="form-control" id="date">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-info" id="clearBtn">
+                                Clear <i class="fas fa-times"></i>
+                            </button>
+                            <button type="submit" class="btn btn-outline-info">
+                                Search <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                        <br>
+                        <!-- loading gif -->
+                        <div class="d-none" id="loading">
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            <span class=""><i class="fas fa-truck"> Loading...</i></span>
+                        </div>
+                        <div id="toastDiv"></div>
+                        <!-- NASA IMAGES-->
+                        <div id="nasa-images" class="text-start card-deck">
+                        </div>
+                        <div class="fas fa-border fa-lg pt-10 text-start text-danger d-none" id="no_images_msg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="user">
+    <%= JSON.stringify(user) %>
+</div>
+<script src="/javascripts/client.js"></script>
+<%- include('includes/end.ejs') %>
